@@ -64,7 +64,7 @@ function replaceSpanBlank (text) {
   // while (text != (text = text.replace(/\[blank\]/ig, function (match,  offset, string) {
   //   return "<span class='blank'>　　" + p2 + "</span>";
   // })));
-  
+  console.log(text);
   return text.replace(/\[blank\]/ig, "<span class='blank'>　</span>");
 }
 
