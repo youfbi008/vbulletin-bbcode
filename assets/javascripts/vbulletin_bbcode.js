@@ -61,10 +61,11 @@ Discourse.Markdown.whiteListTag('font', 'face');
 
 
 function replaceSpanBlank (text) {
-  while (text != (text = text.replace(/\[blank=([^\]]+)\]((?:(?!\[blank=[^\]]+\]|\[\/blank\])[\S\s])*)\[\/blank\]/ig, function (match, p1, p2, offset, string) {
-    return "<span class='blank'>　　" + p2 + "</span>";
-  })));
-  return text;
+  // while (text != (text = text.replace(/\[blank\]/ig, function (match,  offset, string) {
+  //   return "<span class='blank'>　　" + p2 + "</span>";
+  // })));
+  
+  return text.replace(/\[blank\]/ig, "<span class='blank'>　</span>");
 }
 
 Discourse.Dialect.addPreProcessor(replaceSpanBlank);
