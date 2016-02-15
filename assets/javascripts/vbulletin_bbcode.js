@@ -65,7 +65,7 @@ function replaceSpanBlank (text) {
   //   return "<span class='blank'>　　" + p2 + "</span>";
   // })));
   console.log(text);
-  return text.replace(/\[blank\]/ig, "<span class='blank'>　</span>");
+  return text.replace(/\[空格\]/ig, "<span class='blank'>　</span>");
 }
 
 Discourse.Dialect.addPreProcessor(replaceSpanBlank);
