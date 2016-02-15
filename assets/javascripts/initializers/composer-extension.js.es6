@@ -13,7 +13,7 @@ export default {
           id: 'add-editor-space',
           group: 'insertions',
           icon: 'indent',
-          perform: e => e.addText('[空格]')
+          perform: e => e.applySurround('[空格]', '', 'add_full_space')
         });
       })
    
