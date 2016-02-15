@@ -6,14 +6,18 @@ export default {
 
   initialize(container) {
 
-  
-      
       onToolbarCreate(toolbar => {
         toolbar.addButton({
           id: 'add-editor-space',
           group: 'insertions',
           icon: 'indent',
-          perform: e => e.applySurround('[空格]', '', 'add_full_space')
+          perform: e => {
+            if(e.selected) {
+              return e.applySurround('[空格]', '', 'add_full_space');
+            } else {
+              return e.addText("[空格]");
+            }
+          }
         });
       })
    
